@@ -14,7 +14,6 @@ void blink()
   {
     while (digitalRead (interruptPin) == HIGH);   //wait till the interruptPin high
     No_of_Pulse++;
-//    Serial.println (No_of_Pulse);
   }
   attachInterrupt(digitalPinToInterrupt(interruptPin), blink, HIGH); // enable interrupt
 }
@@ -38,7 +37,6 @@ void loop()
   No_of_Pulse = 0;
   AVG = AVG + rpm;                              //adding rpm to find average
   count++;
-//  Serial.println ("Count: " + String (count) + " RPM: " + String (rpm));
   if (count == 6) 
   {
     rpm_avg = AVG / 6;                         // taking average of 6 values
